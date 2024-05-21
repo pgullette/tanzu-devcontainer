@@ -1,0 +1,27 @@
+{
+    "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.base.schema.json",
+    "name": "tap-env",
+    "build": {
+        "dockerfile": "./Dockerfile",
+        "options": [ "--platform=linux/amd64" ],
+        "args": {
+            "VSPHERE_SERVER": "https://vc01cl01-wcp.h2o-4-9446.h2o.vmware.com",
+            "TANZU_CLI_VERSION": "v1.3.0"
+        }
+    },
+    "runArgs": [ "--platform", "linux/amd64", "--env-file", ".devcontainer/.env" ],
+    "postStartCommand": "./.devcontainer/post-start.sh",
+    "features": {
+        "ghcr.io/devcontainers/features/git:1": {}
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "extensions.verifySignature": false
+            },
+            "extensions": [
+                "ms-kubernetes-tools.vscode-kubernetes-tools"
+            ]
+        }
+    }
+}
