@@ -1,19 +1,24 @@
 {
     "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.base.schema.json",
-    "name": "tap-env",
+    "name": "tanzu-devcontainer",
     "build": {
         "dockerfile": "./Dockerfile",
         "options": [ "--platform=linux/amd64" ],
         "args": {
-            "VSPHERE_SERVER": "https://vc01cl01-wcp.h2o-4-9446.h2o.vmware.com",
+            "KUBECTL_MINOR_VERSION": "1.26",
             "TANZU_CLI_VERSION": "v1.3.0"
         }
     },
-    "runArgs": [ "--platform", "linux/amd64", "--env-file", ".devcontainer/.env" ],
-    "postStartCommand": "./.devcontainer/post-start.sh",
+    "runArgs": [ "--platform", "linux/amd64"], //"--env-file", ".devcontainer/.env" ],
+    // "postStartCommand": "./.devcontainer/post-start.sh",
     "features": {
-        "ghcr.io/devcontainers/features/git:1": {}
+        "ghcr.io/devcontainers/features/git:1": {},
+        "ghcr.io/devcontainers-contrib/features/kubectx-kubens:1": {}
     },
+    "overrideFeatureInstallOrder": [
+        "ghcr.io/devcontainers/features/git",
+        "ghcr.io/devcontainers-contrib/features/kubectx-kubens"
+    ],
     "customizations": {
         "vscode": {
             "settings": {
