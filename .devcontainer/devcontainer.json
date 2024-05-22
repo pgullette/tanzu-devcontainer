@@ -22,7 +22,9 @@
     "customizations": {
         "vscode": {
             "settings": {
-                "extensions.verifySignature": false
+                "extensions.verifySignature": false,
+                "terminal.integrated.defaultProfile.linux": "zsh",
+                "terminal.integrated.profiles.linux": { "zsh": { "path": "/usr/bin/zsh" } }
             },
             "extensions": [
                 "ms-kubernetes-tools.vscode-kubernetes-tools"
