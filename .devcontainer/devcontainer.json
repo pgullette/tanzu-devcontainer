@@ -6,14 +6,20 @@
         "options": [ "--platform=linux/amd64" ],
         "args": {
             "KUBECTL_MINOR_VERSION": "1.26",
-            "TANZU_CLI_VERSION": "v1.3.0"
+            "TANZU_CLI_VERSION": "v1.3.0",
+            "TANZU_CLI_CEIP_OPT_IN_PROMPT_ANSWER": "No",
+            "TZ": "America/Chicago"
         }
     },
-    "runArgs": [ "--platform", "linux/amd64"], //"--env-file", ".devcontainer/.env" ],
-    // "postStartCommand": "./.devcontainer/post-start.sh",
+    "runArgs": [ "--platform", "linux/amd64", "--env-file", ".devcontainer/post-start/.env" ],
+    "postStartCommand": "./.devcontainer/post-start/post-start.sh",
     "features": {
         "ghcr.io/devcontainers/features/git:1": {},
-        "ghcr.io/devcontainers-contrib/features/kubectx-kubens:1": {}
+        "ghcr.io/devcontainers-contrib/features/kubectx-kubens:1": {},
+        "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {
+            "jqVersion": "latest",
+            "yqVersion": "latest"
+        }
     },
     "overrideFeatureInstallOrder": [
         "ghcr.io/devcontainers/features/git",

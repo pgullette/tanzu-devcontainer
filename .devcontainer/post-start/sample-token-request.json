@@ -1,0 +1,34 @@
+{
+	"allowedScopes": {
+		"allRoles": false,
+		"generalScopes": [
+			"openid",
+			"group_names",
+			"group_ids"
+		],
+		"organizationScopes": {
+			"roles": []
+		},
+		"servicesScopes": [
+			{
+				"allRoles": false,
+				"roles": [
+					{
+						"name": "service:member",
+						"resource": "*"
+					},
+					{
+						"name": "service:member",
+						"resource": null
+					}
+				],
+				"serviceDefinitionId": "079b6982-e346-4f1f-a917-d88d23d48503"
+			}
+		]
+	},
+	"notifyBeforeExpiry": 7,
+	"refreshTokenTTL": 15901200,
+	"tokenName": "tmc-member-token",
+    "orgId": "",
+    "idToken": ""
+}
