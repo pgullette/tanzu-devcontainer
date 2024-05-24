@@ -1,2 +1,4 @@
 .vscode/settings.json
 .devcontainer/post-start/.env
+.devcontainer/post-start/tmc-token.json
+.devcontainer/post-start/token-request.json
